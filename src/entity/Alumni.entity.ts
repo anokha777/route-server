@@ -7,7 +7,7 @@ import {
 } from 'typeorm';
 import { Length } from 'class-validator';
 
-@Entity()
+@Entity({ name: "alumni"})
 export class Alumni {
   @PrimaryGeneratedColumn()
   id!: number;
@@ -26,4 +26,6 @@ export class Alumni {
 
   @Column()
   fileName!: boolean;
+
+  
 }

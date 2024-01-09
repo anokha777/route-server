@@ -8,7 +8,7 @@ export class AlumniController {
   getAllAlumni = async (req: Request, res: Response) => {
     try {
       const alumniRepository = AppDataSource.getRepository(Alumni);
-      const alumni = await alumniRepository.createQueryBuilder('ay').getMany();
+      const alumni = await alumniRepository.createQueryBuilder('alumni').getMany();
 
       res.status(200).send({
         success: true,
@@ -26,7 +26,10 @@ export class AlumniController {
   };
 
   createAlumni = async (req: Request, res: Response) => {
-    const { docUrl, fileName } = req.body;
+    // const { docUrl, fileName } = req.body;
+    const docUrl = req.body.docUrl;
+    const fileName = req.body.fileName;
+
     try {
       const newAlumni = new Alumni();
 

@@ -11,7 +11,7 @@ export class TestRoutes {
   }
 
   routes() {
-    this.router.get('/test', this.alumniController.getAllAlumni);
+    this.router.get('/alumni', this.alumniController.getAllAlumni);
     this.router.put('/test/:alumniId', this.alumniController.updateAlumni);
     this.router.post('/test', this.alumniController.createAlumni);
   }
